@@ -10,6 +10,6 @@ public class HideShader : MonoBehaviour
     {
         var scale = 1f - Mathf.Clamp01(hideDistance - Vector3.Distance(Camera.main.transform.position, transform.position));
         transform.DOScale(scale, 0.1f);
-        transform.RotateAround(Vector3.zero, Vector3.down, Time.deltaTime * 10f);
+        // transform.RotateAround(Vector3.zero, Vector3.down, Time.deltaTime * 10f);
     }
 }

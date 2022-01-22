@@ -8,17 +8,21 @@ using UnityEngine.UI;
 
 public class Game : MonoBehaviour
 {
-    [SerializeField] private Button test;
+    public static bool IsInteracting { get; set; }
+
+    // [SerializeField] private Button test;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        transform.DOMove(UnityEngine.Vector3.back, 1f);
-        test.OnClickAsObservable().Subscribe(OnClick);
+        // transform.DOMove(UnityEngine.Vector3.back, 1f);
+        // test.OnClickAsObservable().Subscribe(OnClick);
+        
+        
     }
 
-    private void OnClick(Unit unit)
-    {
-        throw new System.NotImplementedException();
-    }
+    // private void OnClick(Unit unit)
+    // {
+    //     throw new System.NotImplementedException();
+    // }
 }

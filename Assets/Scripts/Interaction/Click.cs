@@ -1,5 +1,4 @@
 using System;
-using System.Security.Cryptography;
 using DG.Tweening;
 using UnityEngine;
 
@@ -12,11 +11,17 @@ namespace Interaction
 
         private void OnMouseDown()
         {
-            transform.DOLocalJump(transform.position, 0.5f, 2, 0.25f);
+            transform.DOJump(transform.position, 0.5f, 2, 0.25f);
             
             OnBegin.Invoke(this);
             OnComplete.Invoke(this);
+
+            Game.IsInteracting = true;
         }
 
+        private void OnMouseUp()
+        {
+            Game.IsInteracting = false;
+        }
     }
 }
