@@ -7,13 +7,13 @@ namespace Interaction
 {
     public abstract class Interaction : MonoBehaviour
     {
-        event Action<Interaction> OnBegin = delegate {  };
-        event Action<Interaction> OnComplete = delegate {  };
-        event Action<Interaction> OnFail = delegate {  };
+        public event Action<Interaction> OnBegin = delegate {  };
+        public event Action<Interaction> OnComplete = delegate {  };
+        public event Action<Interaction> OnFail = delegate {  };
 
         protected void InvokeBegin()
         {
-            Debug.Log("Begin interaction");
+            // Debug.Log("Begin interaction");
             OnBegin.Invoke(this);
             
             Game.IsInteracting = true;
@@ -21,19 +21,19 @@ namespace Interaction
         
         protected void InvokeComplete()
         {
-            Debug.Log("Complete interaction");
+            // Debug.Log("Complete interaction");
             OnComplete.Invoke(this);
         }
 
         protected void InvokeFail()
         {
-            Debug.Log("Failed interaction");
+            // Debug.Log("Failed interaction");
             OnFail.Invoke(this);
         }
 
         protected virtual void OnMouseUp()
         {
-            Debug.Log("Interaction over");
+            // Debug.Log("Interaction over");
             Game.IsInteracting = false;
         }
     }
