@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using DG.Tweening;
 using UnityEngine;
 
@@ -9,6 +8,7 @@ namespace Interaction
         [SerializeField] private Transform start;
         [SerializeField] private Transform destination;
         [SerializeField] private float snapDistance = 1f;
+        [SerializeField] private float hoverHeight = 0.5f;
         
         private float _distanceToDestination;
         private Plane _plane;
@@ -29,10 +29,9 @@ namespace Interaction
         private void MoveObject()
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            float distance;
-            if(_plane.Raycast(ray, out distance))
+            if(_plane.Raycast(ray, out var distance))
             {
-                transform.position = ray.GetPoint(distance);
+                transform.DOMove(ray.GetPoint(distance) + Vector3.up * hoverHeight, 0.1f);
             }
         }
 
