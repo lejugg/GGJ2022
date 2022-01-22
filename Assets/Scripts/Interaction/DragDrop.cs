@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using DG.Tweening;
 using UnityEngine;
 
@@ -9,35 +10,37 @@ namespace Interaction
         [SerializeField] private Transform destination;
         [SerializeField] private float snapDistance = 1f;
         
-        private Vector3 _screenPoint;
-        private Vector3 _offset;
         private float _distanceToDestination;
-
+        private Plane _plane;
 
         private void OnMouseDown()
         {
             InvokeBegin();
             
-            _screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-            _offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z));
+            _plane = new Plane(Vector3.up, transform.position); // ground plane
         }
 
         private void OnMouseDrag()
         {
-            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z);
-            Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + _offset;
-            transform.position = curPosition;
+            MoveObject();
+            ShowSnapDistance();
+        }
 
+        private void MoveObject()
+        {
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            float distance;
+            if(_plane.Raycast(ray, out distance))
+            {
+                transform.position = ray.GetPoint(distance);
+            }
+        }
+
+        private void ShowSnapDistance()
+        {
             _distanceToDestination = Vector3.Distance(transform.position, destination.position);
 
-            if (_distanceToDestination <= snapDistance)
-            {
-                destination.DOScale(1.25f, 0.25f);
-            } 
-            else
-            {
-                destination.DOScale(1f, 0.25f);
-            }
+            destination.DOScale(_distanceToDestination <= snapDistance ? 1.25f : 1f, 0.25f);
         }
 
         private void OnMouseUp()
