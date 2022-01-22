@@ -1,20 +1,15 @@
-using System;
 using UnityEngine;
 
 namespace Interaction
 {
-    public class DragDrop : MonoBehaviour, IInteraction
+    public class DragDrop : Interaction
     {
-        public event Action<IInteraction> OnBegin = delegate {  };
-        public event Action<IInteraction> OnComplete = delegate {  };
-
         private Vector3 _screenPoint;
         private Vector3 _offset;
 
         private void OnMouseDown()
         {
-            OnBegin.Invoke(this);
-            Game.IsInteracting = true;
+            InvokeBegin();
 
             _screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
             _offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, _screenPoint.z));
@@ -29,8 +24,7 @@ namespace Interaction
 
         private void OnMouseUp()
         {
-            OnComplete.Invoke(this);
-            Game.IsInteracting = false;
+            InvokeComplete();
         }
     }
 }

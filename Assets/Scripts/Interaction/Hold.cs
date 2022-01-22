@@ -1,24 +1,23 @@
-using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
 namespace Interaction
 {
-    public class Hold : MonoBehaviour, IInteraction
+    public class Hold : Interaction
     {
-        public event Action<IInteraction> OnBegin = delegate {  };
-        public event Action<IInteraction> OnComplete = delegate {  };
-
+        
         [SerializeField] private float duration = 3f;
+        
         private Coroutine _routine;
+        private bool completed;
 
         private void OnMouseDown()
         {
             transform.DOScale(1.1f, 0.25f).SetEase(Ease.OutBounce);
-            OnBegin.Invoke(this);
-            Game.IsInteracting = true;
+            InvokeBegin();
 
+            completed = false;
             _routine = StartCoroutine(Wait());
         }
 
@@ -32,16 +31,18 @@ namespace Interaction
             }
             
             transform.DOScale(1f, 0.25f).SetEase(Ease.InBounce);
-            OnComplete.Invoke(this);
-            Debug.Log("Success hold");
+            InvokeComplete();
+            completed = true;
         }
 
         private void OnMouseUp()
         {
-            Debug.Log("End Holding");
-            Game.IsInteracting = false;
-            transform.DOScale(1f, 0.25f).SetEase(Ease.InBounce);
+            if (completed)
+                return;
+
             StopCoroutine(_routine);
+            transform.DOScale(1f, 0.25f).SetEase(Ease.InBounce);
+            InvokeFail();
         }
     }
 }
