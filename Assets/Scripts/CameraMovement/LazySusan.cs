@@ -5,6 +5,7 @@ namespace CameraMovement
     public class LazySusan : MonoBehaviour
     {
         [SerializeField, Range(0f, 5f)] private float rotationSpeed = 1f;
+        [SerializeField] private bool invert = true;
         
         private Vector3 _previousInput;
         private Transform _cameraTransform;
@@ -30,7 +31,7 @@ namespace CameraMovement
                 }
                 
                 var delta = Input.mousePosition - _previousInput;
-                _cameraTransform.RotateAround(transform.position, Vector3.up, delta.x * rotationSpeed);
+                _cameraTransform.RotateAround(transform.position, Vector3.up, delta.x * rotationSpeed * (invert ? -1f : 1f));
                 _previousInput = Input.mousePosition;
             }
         }
