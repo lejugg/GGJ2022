@@ -17,7 +17,7 @@ namespace Interaction
         {
             InvokeBegin();
             
-            _plane = new Plane(Vector3.up, transform.position); // ground plane
+            _plane = new Plane(Vector3.up, transform.position);
         }
 
         private void OnMouseDrag()
@@ -44,6 +44,8 @@ namespace Interaction
 
         private void OnMouseUp()
         {
+            base.OnMouseUp();
+            
             if (_distanceToDestination <= snapDistance)
             {
                 InvokeComplete();
@@ -54,6 +56,7 @@ namespace Interaction
                 InvokeFail();
                 transform.DOMove(start.position, 0.75f).SetEase(Ease.OutCubic);
             }
+            
             
             destination.DOScale(1f, 0.25f);
         }

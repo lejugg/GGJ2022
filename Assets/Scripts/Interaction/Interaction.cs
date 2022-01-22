@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace Interaction
@@ -13,6 +15,7 @@ namespace Interaction
         {
             Debug.Log("Begin interaction");
             OnBegin.Invoke(this);
+            
             Game.IsInteracting = true;
         }
         
@@ -20,13 +23,17 @@ namespace Interaction
         {
             Debug.Log("Complete interaction");
             OnComplete.Invoke(this);
-            Game.IsInteracting = false;
         }
-        
+
         protected void InvokeFail()
         {
             Debug.Log("Failed interaction");
             OnFail.Invoke(this);
+        }
+
+        protected virtual void OnMouseUp()
+        {
+            Debug.Log("Interaction over");
             Game.IsInteracting = false;
         }
     }

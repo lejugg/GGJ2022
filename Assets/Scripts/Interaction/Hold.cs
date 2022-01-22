@@ -23,12 +23,7 @@ namespace Interaction
 
         private IEnumerator Wait()
         {
-            var t = 0f;
-            while (t < duration)
-            {
-                yield return new WaitForEndOfFrame();
-                t += Time.deltaTime;
-            }
+            yield return new WaitForSeconds(duration);
             
             transform.DOScale(1f, 0.25f).SetEase(Ease.InBounce);
             InvokeComplete();
@@ -37,6 +32,8 @@ namespace Interaction
 
         private void OnMouseUp()
         {
+            base.OnMouseUp();
+            
             if (completed)
                 return;
 
