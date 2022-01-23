@@ -14,7 +14,7 @@ namespace Interaction
 
         private void OnMouseDown()
         {
-            transform.DOScale(1.1f, 0.25f).SetEase(Ease.OutBounce);
+            transform.DOScale(1.2f, 0.5f).SetEase(Ease.OutBack);
             InvokeBegin();
 
             completed = false;
@@ -25,7 +25,7 @@ namespace Interaction
         {
             yield return new WaitForSeconds(duration);
             
-            transform.DOScale(1f, 0.25f).SetEase(Ease.InBounce);
+            transform.DOScale(1f, 0.5f).SetEase(Ease.InBack);
             InvokeComplete();
             completed = true;
         }
@@ -38,7 +38,7 @@ namespace Interaction
                 return;
 
             StopCoroutine(_routine);
-            transform.DOScale(1f, 0.25f).SetEase(Ease.InBounce);
+            transform.DOScale(1f, 0.5f).SetEase(Ease.InBack);
             InvokeFail();
         }
     }

@@ -8,12 +8,6 @@ namespace CameraMovement
         [SerializeField] private bool invert = true;
         
         private Vector3 _previousInput;
-        private Transform _cameraTransform;
-
-        private void Awake()
-        {
-            _cameraTransform = Camera.main.transform;
-        }
 
         private void Update()
         {
@@ -31,7 +25,7 @@ namespace CameraMovement
                 }
                 
                 var delta = Input.mousePosition - _previousInput;
-                _cameraTransform.RotateAround(transform.position, Vector3.up, delta.x * rotationSpeed * (invert ? -1f : 1f));
+                transform.RotateAround(transform.position, Vector3.up, delta.x * rotationSpeed * (invert ? -1f : 1f));
                 _previousInput = Input.mousePosition;
             }
         }
