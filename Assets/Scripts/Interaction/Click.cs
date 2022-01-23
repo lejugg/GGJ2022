@@ -16,7 +16,7 @@ namespace Interaction
         private void OnMouseDown()
         {
             _collider.enabled = false;
-            transform.DOJump(transform.position, 0.5f, 2, 0.25f).OnComplete( () => _collider.enabled = true);
+            transform.DOJump(transform.position, 0.7f, 3, 0.5f).OnComplete( () => _collider.enabled = true);
             
             InvokeBegin();
             InvokeComplete();

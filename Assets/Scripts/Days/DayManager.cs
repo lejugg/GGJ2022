@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,8 +8,10 @@ namespace Day
     {
         [SerializeField] private List<Day> _days;
         
-        private int _currentDayIndex = 0;
         public Day CurrentDay => _days[_currentDayIndex];
+        public event Action<int> OnDayComplete = delegate {  }; 
+        
+        private int _currentDayIndex = 0;
         
         private void Awake()
         {
@@ -17,6 +20,8 @@ namespace Day
 
         private void HandleCurrentDayComplete()
         {
+            OnDayComplete(_currentDayIndex);
+            
             CurrentDay.OnDayComplete -= HandleCurrentDayComplete;
             _currentDayIndex++;
 
