@@ -743,7 +743,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.6891242, g: 0.7882329, b: 0.8396226, a: 1}
   m_Intensity: 0.38
   m_Range: 10
   m_SpotAngle: 30
@@ -848,6 +848,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 593107980, guid: 0e777b332bb2c694b81bc47275b322fa, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 833695548, guid: 0e777b332bb2c694b81bc47275b322fa, type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1148412050586622604, guid: 0e777b332bb2c694b81bc47275b322fa,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8661623722843931934, guid: 0e777b332bb2c694b81bc47275b322fa,
         type: 3}
       propertyPath: m_RootOrder
@@ -1722,13 +1735,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427181336}
-  m_LocalRotation: {x: 0.24373096, y: -0, z: -0, w: 0.9698429}
+  m_LocalRotation: {x: 0.03075799, y: -0, z: -0, w: 0.9995269}
   m_LocalPosition: {x: -1.45, y: 26.9, z: -32.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 484933743}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 28.214, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 3.525, y: 0, z: 0}
 --- !u!1 &1440337331
 GameObject:
   m_ObjectHideFlags: 0
