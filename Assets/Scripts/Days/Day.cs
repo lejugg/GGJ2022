@@ -34,7 +34,7 @@ namespace Day
                 return;
             }
 
-            OnInteractionComplete((_taskQueue.Count + 0.5f) / interactions.Count);
+            OnInteractionComplete(1f - ((_taskQueue.Count + 0.5f) / interactions.Count));
             NextDayAndSubscribe();
         }
 

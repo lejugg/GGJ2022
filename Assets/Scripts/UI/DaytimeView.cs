@@ -44,6 +44,8 @@ namespace UI
                 eveningShown = true;
             }
             
+            Debug.Log("day progress " + dayProgress);
+            
             field.text = daytime;
         }
 
@@ -59,8 +61,10 @@ namespace UI
 
         private void Animate()
         {
+            _rect.DOKill();
+            
             _rect.DOScale(1f, 0.2f).SetEase(Ease.InCubic);
-            _rect.DOScale(0f, 0.2f).SetEase(Ease.InCubic).SetDelay(5f);
+            _rect.DOScale(0f, 0.2f).SetEase(Ease.InCubic).SetDelay(3f);
         }
     }
 }
