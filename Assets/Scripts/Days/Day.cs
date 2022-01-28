@@ -9,6 +9,7 @@ namespace Day
         [SerializeField] private List<Interaction.Interaction> interactions;
         
         public event Action OnDayComplete = delegate {  };
+        public event Action<float> OnInteractionComplete = delegate {  };
         
         private Queue<Interaction.Interaction> _taskQueue = new Queue<Interaction.Interaction>();
         private Interaction.Interaction _currentInteraction;
@@ -32,7 +33,8 @@ namespace Day
                 OnDayComplete();
                 return;
             }
-            
+
+            OnInteractionComplete((_taskQueue.Count + 0.5f) / interactions.Count);
             NextDayAndSubscribe();
         }
 
@@ -43,5 +45,6 @@ namespace Day
             
             Debug.Log($"Do {_currentInteraction.gameObject.name}: {_taskQueue.Count} left");
         }
+
     }
 }
