@@ -9,6 +9,9 @@ namespace UI
     {
         [SerializeField] private TextMeshProUGUI field;
         private RectTransform _rect;
+        private bool morningShown;
+        private bool middayShown;
+        private bool eveningShown;
 
         private void Awake()
         {
@@ -22,17 +25,23 @@ namespace UI
         {
             var daytime = "";
 
-            if (dayProgress < 0.333f)
+            if (dayProgress < 0.3f)
             {
                 daytime = "Morning";
+                if(!morningShown) Animate();
+                morningShown = true;
             }
-            else if (dayProgress < 0.666f)
+            else if (dayProgress < 0.7f)
             {
                 daytime = "Midday";
+                if(!middayShown) Animate();
+                middayShown = true;
             }
             else
             {
                 daytime = "Evening";
+                if(!eveningShown) Animate();
+                eveningShown = true;
             }
             
             field.text = daytime;
@@ -40,6 +49,10 @@ namespace UI
 
         private void HandleOnStartNewDay(int dayIndex)
         {
+            morningShown = false;
+            middayShown = false;
+            eveningShown = false;
+            
             field.text = "Day " + (dayIndex + 1);
             Animate();
         }
