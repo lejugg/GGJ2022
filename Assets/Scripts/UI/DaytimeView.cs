@@ -43,9 +43,7 @@ namespace UI
                 if(!eveningShown) Animate();
                 eveningShown = true;
             }
-            
-            Debug.Log("day progress " + dayProgress);
-            
+
             field.text = daytime;
         }
 

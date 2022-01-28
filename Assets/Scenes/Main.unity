@@ -188,6 +188,7 @@ MonoBehaviour:
   BeginSound: {fileID: 0}
   CompleteSound: {fileID: 0}
   FailSound: {fileID: 0}
+  animators: []
 --- !u!65 &18187895
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2578,6 +2579,7 @@ MonoBehaviour:
   - {fileID: 1440337333}
   - {fileID: 872913310}
   - {fileID: 700140901}
+  - {fileID: 1193121718}
 --- !u!1 &2113331406
 GameObject:
   m_ObjectHideFlags: 0

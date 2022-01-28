@@ -41,6 +41,7 @@ namespace Day
         private void NextDayAndSubscribe()
         {
             _currentInteraction = _taskQueue.Dequeue();
+            _currentInteraction.SetCurrent();
             _currentInteraction.OnComplete += InteractionCompleted;
             
             Debug.Log($"Do {_currentInteraction.gameObject.name}: {_taskQueue.Count} left");

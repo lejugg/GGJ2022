@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -11,9 +12,11 @@ namespace Interaction
         [SerializeField] private AudioClip BeginSound;
         [SerializeField] private AudioClip CompleteSound;
         [SerializeField] private AudioClip FailSound;
+        [SerializeField] private List<Animator> animators;
         
-        private Animator _animator;
         private AudioSource _audioSource;
+        
+        public bool IsCurrentInteraction { get; protected set; }
 
         public event Action<Interaction> OnBegin = delegate {  };
         public event Action<Interaction> OnComplete = delegate {  };
@@ -21,7 +24,6 @@ namespace Interaction
 
         private void Awake()
         {
-            _animator = GetComponent<Animator>();
             _audioSource = GetComponent<AudioSource>() != null ? GetComponent<AudioSource>() : gameObject.AddComponent<AudioSource>();
         }
 
@@ -43,6 +45,7 @@ namespace Interaction
             
             AnimateTrigger("Complete");
             PlaySound(CompleteSound);
+            SetCurrentInteraction(false);
         }
 
         protected void InvokeFail()
@@ -52,6 +55,7 @@ namespace Interaction
             
             AnimateTrigger("Fail");
             PlaySound(FailSound);
+            SetCurrentInteraction(false);
         }
 
         protected virtual void OnMouseUp()
@@ -60,10 +64,12 @@ namespace Interaction
             Game.IsInteracting = false;
         }
         
-        
         private void AnimateTrigger( string trigger )
         {
-            if (_animator != null) _animator.SetTrigger(trigger);
+            foreach (var animator in animators)
+            {
+                if (animator != null) animator.SetTrigger(trigger);
+            }
         }
 
         private void PlaySound(AudioClip clip)
@@ -75,5 +81,20 @@ namespace Interaction
             _audioSource.Play();
         }
 
+        public void SetCurrent()
+        {
+            SetCurrentInteraction(true);
+        }
+
+        private void SetCurrentInteraction(bool isCurrent)
+        {
+            IsCurrentInteraction = isCurrent;
+            
+            foreach (var animator in animators)
+            {
+                if (animator != null) animator.SetBool("isCurrentTask", isCurrent);
+            }
+
+        }
     }
 }
