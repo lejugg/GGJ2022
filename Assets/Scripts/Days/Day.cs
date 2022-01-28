@@ -44,7 +44,7 @@ namespace Day
             _currentInteraction.SetCurrent();
             _currentInteraction.OnComplete += InteractionCompleted;
             
-            Debug.Log($"Do {_currentInteraction.gameObject.name}: {_taskQueue.Count} left");
+            Debug.Log($"Do {_currentInteraction.Description}");
         }
 
     }

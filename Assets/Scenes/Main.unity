@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdfd2a102864e0096fd908956290a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  description: 
   BeginSound: {fileID: 0}
   CompleteSound: {fileID: 0}
   FailSound: {fileID: 0}
@@ -982,6 +983,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Click (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7479539677955847994, guid: ca1f7aa316ece42f4aa686548f2b115d,
+        type: 3}
+      propertyPath: description
+      value: Click the middle thing
+      objectReference: {fileID: 0}
     - target: {fileID: 7479539677955847999, guid: ca1f7aa316ece42f4aa686548f2b115d,
         type: 3}
       propertyPath: m_RootOrder
@@ -1495,6 +1501,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Click (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7479539677955847994, guid: ca1f7aa316ece42f4aa686548f2b115d,
+        type: 3}
+      propertyPath: description
+      value: Click the right thing
       objectReference: {fileID: 0}
     - target: {fileID: 7479539677955847999, guid: ca1f7aa316ece42f4aa686548f2b115d,
         type: 3}
@@ -2829,6 +2840,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Click
+      objectReference: {fileID: 0}
+    - target: {fileID: 7479539677955847994, guid: ca1f7aa316ece42f4aa686548f2b115d,
+        type: 3}
+      propertyPath: description
+      value: Click the left thing
+      objectReference: {fileID: 0}
+    - target: {fileID: 7479539677955847994, guid: ca1f7aa316ece42f4aa686548f2b115d,
+        type: 3}
+      propertyPath: animators.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7479539677955847999, guid: ca1f7aa316ece42f4aa686548f2b115d,
         type: 3}

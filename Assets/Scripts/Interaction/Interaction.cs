@@ -9,6 +9,7 @@ namespace Interaction
     public abstract class Interaction : MonoBehaviour
     {
         [Header("Interaction")] 
+        [SerializeField] private string description = "Do!";
         [SerializeField] private AudioClip BeginSound;
         [SerializeField] private AudioClip CompleteSound;
         [SerializeField] private AudioClip FailSound;
@@ -17,6 +18,7 @@ namespace Interaction
         private AudioSource _audioSource;
         
         public bool IsCurrentInteraction { get; protected set; }
+        public string Description => description;
 
         public event Action<Interaction> OnBegin = delegate {  };
         public event Action<Interaction> OnComplete = delegate {  };
