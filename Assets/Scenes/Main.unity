@@ -978,6 +978,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2021734451}
     m_Modifications:
+    - target: {fileID: -5500828220580819112, guid: ca1f7aa316ece42f4aa686548f2b115d,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 48fbe911da33a4414907303bcde6c8bf,
+        type: 2}
     - target: {fileID: 7479539677955847984, guid: ca1f7aa316ece42f4aa686548f2b115d,
         type: 3}
       propertyPath: m_Name
@@ -1497,6 +1503,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2021734451}
     m_Modifications:
+    - target: {fileID: -5500828220580819112, guid: ca1f7aa316ece42f4aa686548f2b115d,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 48fbe911da33a4414907303bcde6c8bf,
+        type: 2}
     - target: {fileID: 7479539677955847984, guid: ca1f7aa316ece42f4aa686548f2b115d,
         type: 3}
       propertyPath: m_Name
@@ -2836,11 +2848,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2021734451}
     m_Modifications:
+    - target: {fileID: -5500828220580819112, guid: ca1f7aa316ece42f4aa686548f2b115d,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ce5ba95333497450a939e4a99db55cf7, type: 3}
+    - target: {fileID: -5500828220580819112, guid: ca1f7aa316ece42f4aa686548f2b115d,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 48fbe911da33a4414907303bcde6c8bf,
+        type: 2}
     - target: {fileID: 7479539677955847984, guid: ca1f7aa316ece42f4aa686548f2b115d,
         type: 3}
       propertyPath: m_Name
       value: Click
       objectReference: {fileID: 0}
+    - target: {fileID: 7479539677955847994, guid: ca1f7aa316ece42f4aa686548f2b115d,
+        type: 3}
+      propertyPath: BeginSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8dcd0123f921f41e2ad557b84f31a558, type: 3}
     - target: {fileID: 7479539677955847994, guid: ca1f7aa316ece42f4aa686548f2b115d,
         type: 3}
       propertyPath: description
