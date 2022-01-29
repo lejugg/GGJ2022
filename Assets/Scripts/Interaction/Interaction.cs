@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 
 namespace Interaction
@@ -14,8 +15,7 @@ namespace Interaction
         [SerializeField] private AudioClip CompleteSound;
         [SerializeField] private AudioClip FailSound;
         [SerializeField] private List<Animator> animators;
-        
-        private AudioSource _audioSource;
+        [SerializeField] private AudioSource _audioSource;
         
         public bool IsCurrentInteraction { get; protected set; }
         public string Description => description;
@@ -26,7 +26,6 @@ namespace Interaction
 
         private void Awake()
         {
-            _audioSource = GetComponent<AudioSource>() != null ? GetComponent<AudioSource>() : gameObject.AddComponent<AudioSource>();
         }
 
         protected void InvokeBegin()

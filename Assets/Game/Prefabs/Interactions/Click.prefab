@@ -216,9 +216,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdfd2a102864e0096fd908956290a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  description: Do!
   BeginSound: {fileID: 0}
   CompleteSound: {fileID: 0}
   FailSound: {fileID: 0}
+  animators: []
+  _audioSource: {fileID: -5500828220580819112}
 --- !u!54 &7479539677955847995
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -246,7 +249,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
