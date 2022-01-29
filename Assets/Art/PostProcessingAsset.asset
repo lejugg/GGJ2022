@@ -63,6 +63,46 @@ MonoBehaviour:
   - {fileID: -5656744384170005341}
   - {fileID: 9182711882255861908}
   - {fileID: 5095974438710917455}
+  - {fileID: 9112196319318852412}
+  - {fileID: 1657518027522555688}
+  - {fileID: 6712021662144406228}
+--- !u!114 &1657518027522555688
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e1dc532bcb41949b58bc4f2abfbb7e, type: 3}
+  m_Name: LensDistortion
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.15
+    min: -1
+    max: 1
+  xMultiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 1
+  yMultiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 1
+  center:
+    m_OverrideState: 0
+    m_Value: {x: 0.5, y: 0.5}
+  scale:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0.01
+    max: 5
 --- !u!114 &5095974438710917455
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -93,6 +133,53 @@ MonoBehaviour:
     m_Value: 0.075
     min: 0
     max: 0.2
+--- !u!114 &6712021662144406228
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221518ef91623a7438a71fef23660601, type: 3}
+  m_Name: WhiteBalance
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  temperature:
+    m_OverrideState: 0
+    m_Value: 30
+    min: -100
+    max: 100
+  tint:
+    m_OverrideState: 0
+    m_Value: 88
+    min: -100
+    max: 100
+--- !u!114 &9112196319318852412
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
+  m_Name: LiftGammaGain
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  lift:
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 0.9498999, z: 0.74692166, w: 0.1748809}
+  gamma:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: -0.2702703}
+  gain:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.13903284, z: 0.39767787, w: -0.618442}
 --- !u!114 &9182711882255861908
 MonoBehaviour:
   m_ObjectHideFlags: 3
