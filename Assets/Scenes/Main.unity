@@ -190,6 +190,7 @@ MonoBehaviour:
   CompleteSound: {fileID: 0}
   FailSound: {fileID: 0}
   animators: []
+  _audioSource: {fileID: 0}
 --- !u!65 &18187895
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -752,7 +753,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484933741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -7.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1427181337}
@@ -768,30 +769,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2840577500790141660, guid: 0e777b332bb2c694b81bc47275b322fa,
-        type: 3}
-      propertyPath: m_VertexStreams.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2840577500790141660, guid: 0e777b332bb2c694b81bc47275b322fa,
-        type: 3}
-      propertyPath: m_VertexStreams.Array.data[5]
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 2840577500790141661, guid: 0e777b332bb2c694b81bc47275b322fa,
-        type: 3}
-      propertyPath: CustomDataModule.vector0_2.scalar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2840577500790141661, guid: 0e777b332bb2c694b81bc47275b322fa,
-        type: 3}
-      propertyPath: CustomDataModule.vector0_3.scalar
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2840577500790141662, guid: 0e777b332bb2c694b81bc47275b322fa,
+    - target: {fileID: 210926792317374375, guid: 0e777b332bb2c694b81bc47275b322fa,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8661623722843931934, guid: 0e777b332bb2c694b81bc47275b322fa,
         type: 3}
@@ -1012,6 +993,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Click (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7479539677955847984, guid: ca1f7aa316ece42f4aa686548f2b115d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7479539677955847994, guid: ca1f7aa316ece42f4aa686548f2b115d,
         type: 3}
@@ -1537,6 +1523,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Click (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7479539677955847984, guid: ca1f7aa316ece42f4aa686548f2b115d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7479539677955847994, guid: ca1f7aa316ece42f4aa686548f2b115d,
         type: 3}
@@ -2138,6 +2129,7 @@ MonoBehaviour:
   - {fileID: 260774553}
   - {fileID: 2116108864}
   - {fileID: 1183357645}
+  - {fileID: 0}
 --- !u!1 &1692135463
 GameObject:
   m_ObjectHideFlags: 0
@@ -2855,6 +2847,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 437188488168105401, guid: fff3d928d8ddf914490772c22faaeb9c,
+        type: 3}
+      propertyPath: duration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 508397162891471658, guid: fff3d928d8ddf914490772c22faaeb9c,
         type: 3}
       propertyPath: m_RootOrder
@@ -2979,10 +2976,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 773207975727463131, guid: 81838bbf02e799543850e15002c9357c,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581161688948876483, guid: 81838bbf02e799543850e15002c9357c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3316205109267897944, guid: 81838bbf02e799543850e15002c9357c,
         type: 3}
       propertyPath: m_Name
       value: Lights
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556418565574837046, guid: 81838bbf02e799543850e15002c9357c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81838bbf02e799543850e15002c9357c, type: 3}
@@ -3077,6 +3089,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Click
+      objectReference: {fileID: 0}
+    - target: {fileID: 7479539677955847984, guid: ca1f7aa316ece42f4aa686548f2b115d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7479539677955847994, guid: ca1f7aa316ece42f4aa686548f2b115d,
         type: 3}
