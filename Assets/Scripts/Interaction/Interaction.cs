@@ -56,7 +56,6 @@ namespace Interaction
             
             AnimateTrigger("Fail");
             PlaySound(FailSound);
-            SetCurrentInteraction(false);
         }
 
         protected virtual void OnMouseUp()
