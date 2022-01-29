@@ -2992,7 +2992,7 @@ PrefabInstance:
     - target: {fileID: 1643194039277075617, guid: 81838bbf02e799543850e15002c9357c,
         type: 3}
       propertyPath: description
-      value: Turn on the basement lamp
+      value: Turn on the lower lamp
       objectReference: {fileID: 0}
     - target: {fileID: 2581161688948876483, guid: 81838bbf02e799543850e15002c9357c,
         type: 3}
@@ -3017,7 +3017,7 @@ PrefabInstance:
     - target: {fileID: 7321382548833954598, guid: 81838bbf02e799543850e15002c9357c,
         type: 3}
       propertyPath: description
-      value: Turn on the lower lamp
+      value: Turn on the basement lamp
       objectReference: {fileID: 0}
     - target: {fileID: 9146096732363813970, guid: 81838bbf02e799543850e15002c9357c,
         type: 3}

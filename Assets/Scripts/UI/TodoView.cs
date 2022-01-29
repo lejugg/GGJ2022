@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Day;
 using DG.Tweening;
@@ -15,12 +16,24 @@ namespace UI
 
         private bool toggle = false;
         private RectTransform _rect;
+        private int _currentDayIndex;
 
         private void Awake()
         {
-            _rect = GetComponent<RectTransform>();
             DayManager.OnStartNewDay += HandleStartNewDay;
+            _rect = GetComponent<RectTransform>();
             close.onClick.AddListener( HandleClose);
+        }
+
+        private void Start()
+        {
+            
+            DayManager.OnCurrentDayInteraction += HandleNewInteraction;
+        }
+
+        private void HandleNewInteraction(float dayProgress)
+        {
+            HandleStartNewDay(_currentDayIndex);
         }
 
         private void HandleClose()
@@ -32,11 +45,14 @@ namespace UI
 
         private void HandleStartNewDay(int index)
         {
+            _currentDayIndex = index;
+            
             var tasks = "";
             var interactions = _days[index].Interactions;
             
             foreach (var interaction in interactions)
             {
+                tasks += interaction.WasCompletedToday ? "DONE: " : "";
                 tasks += interaction.Description + "\n";
             }
 

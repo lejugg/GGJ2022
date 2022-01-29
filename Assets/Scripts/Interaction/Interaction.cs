@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Day;
 using TMPro;
 using UnityEngine;
 
@@ -16,16 +17,25 @@ namespace Interaction
         [SerializeField] private AudioClip FailSound;
         [SerializeField] private List<Animator> animators;
         [SerializeField] private AudioSource _audioSource;
-        
+
         public bool IsCurrentInteraction { get; protected set; }
+        public bool WasCompletedToday => _wasCompletedToday;
         public string Description => description;
 
         public event Action<Interaction> OnBegin = delegate {  };
         public event Action<Interaction> OnComplete = delegate {  };
         public event Action<Interaction> OnFail = delegate {  };
+        
+        private bool _wasCompletedToday;
 
         private void Awake()
         {
+            DayManager.OnDayComplete += HandleDayComplete;
+        }
+
+        private void HandleDayComplete(int dayIndex)
+        {
+            SetCompletedToday(false);
         }
 
         protected void InvokeBegin()
@@ -46,7 +56,12 @@ namespace Interaction
             
             AnimateTrigger("Complete");
             PlaySound(CompleteSound);
-            SetCurrentInteraction(false);
+
+            if (IsCurrentInteraction)
+            {
+                SetCompletedToday(true);
+                SetCurrentInteraction(false);
+            }
         }
 
         protected void InvokeFail()
@@ -94,7 +109,12 @@ namespace Interaction
             {
                 if (animator != null) animator.SetBool("isCurrentTask", isCurrent);
             }
-
         }
+        
+        private void SetCompletedToday(bool completedToday)
+        {
+            _wasCompletedToday = completedToday;
+        }
+
     }
 }
