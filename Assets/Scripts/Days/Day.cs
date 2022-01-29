@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Day
@@ -8,6 +9,8 @@ namespace Day
     {
         [SerializeField] private List<Interaction.Interaction> interactions;
         
+        
+        public List<Interaction.Interaction> Interactions => interactions.Where(interaction => interaction!= null).ToList();
         public event Action OnDayComplete = delegate {  };
         public event Action<float> OnInteractionComplete = delegate {  };
         
@@ -16,7 +19,7 @@ namespace Day
         
         public void Initialize()
         {
-            foreach (var interaction in interactions)
+            foreach (var interaction in Interactions)
             {
                 _taskQueue.Enqueue(interaction);
             }
@@ -34,7 +37,7 @@ namespace Day
                 return;
             }
 
-            OnInteractionComplete(1f - ((_taskQueue.Count + 0.5f) / interactions.Count));
+            OnInteractionComplete(1f - ((_taskQueue.Count + 0.5f) / Interactions.Count));
             NextDayAndSubscribe();
         }
 
