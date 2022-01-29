@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdfd2a102864e0096fd908956290a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Do!
-  BeginSound: {fileID: 0}
+  description: Turn on the highest lamp
+  BeginSound: {fileID: 8300000, guid: 35fff23e9969e4012ad7b11f02da55be, type: 3}
   CompleteSound: {fileID: 0}
   FailSound: {fileID: 0}
   animators:
@@ -95,8 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdfd2a102864e0096fd908956290a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Do!
-  BeginSound: {fileID: 0}
+  description: Turn on the basement lamp
+  BeginSound: {fileID: 8300000, guid: 35fff23e9969e4012ad7b11f02da55be, type: 3}
   CompleteSound: {fileID: 0}
   FailSound: {fileID: 0}
   animators:
@@ -546,8 +546,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdfd2a102864e0096fd908956290a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Do!
-  BeginSound: {fileID: 0}
+  description: Turn on the lower lamp
+  BeginSound: {fileID: 8300000, guid: 35fff23e9969e4012ad7b11f02da55be, type: 3}
   CompleteSound: {fileID: 0}
   FailSound: {fileID: 0}
   animators:
@@ -597,8 +597,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdfd2a102864e0096fd908956290a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Do!
-  BeginSound: {fileID: 0}
+  description: Turn on the middle lamp
+  BeginSound: {fileID: 8300000, guid: 35fff23e9969e4012ad7b11f02da55be, type: 3}
   CompleteSound: {fileID: 0}
   FailSound: {fileID: 0}
   animators:
@@ -1427,7 +1427,7 @@ PrefabInstance:
     - target: {fileID: 8377506663033821376, guid: 6536ab5493621994fb0f5ad600133f13,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 0.3
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6536ab5493621994fb0f5ad600133f13, type: 3}
