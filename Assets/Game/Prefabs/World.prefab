@@ -1028,11 +1028,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 437188488168105401, guid: fff3d928d8ddf914490772c22faaeb9c,
         type: 3}
-      propertyPath: duration
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 437188488168105401, guid: fff3d928d8ddf914490772c22faaeb9c,
-        type: 3}
       propertyPath: description
       value: Please hold for a message from the toaster!
       objectReference: {fileID: 0}
