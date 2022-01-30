@@ -1637,6 +1637,14 @@ PrefabInstance:
       propertyPath: _days.Array.data[3]
       value: 
       objectReference: {fileID: 1193121718}
+    - target: {fileID: 3824962317800434504, guid: 46a7ce9e6a49acd478a5851a98d0a90e,
+        type: 3}
+      propertyPath: m_text
+      value: "Switch on the light in the weather station \nSwitch on the upper light
+        in the living quarters \nSwitch on the lower lights in the living quarters
+        \nSwitch on the light in the maintance room \nPlease hold for a message from
+        the toaster!"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46a7ce9e6a49acd478a5851a98d0a90e, type: 3}
 --- !u!1001 &5535177646054793267
@@ -1787,7 +1795,7 @@ PrefabInstance:
     - target: {fileID: 865578170997086080, guid: e71587454e05c9546a83731fc3e2117a,
         type: 3}
       propertyPath: description
-      value: Switch on the lower lights in the living quarters
+      value: Switch on the light in the maintance room
       objectReference: {fileID: 0}
     - target: {fileID: 1690141670286756084, guid: e71587454e05c9546a83731fc3e2117a,
         type: 3}
@@ -1797,7 +1805,7 @@ PrefabInstance:
     - target: {fileID: 2489010870734431188, guid: e71587454e05c9546a83731fc3e2117a,
         type: 3}
       propertyPath: description
-      value: Switch on the uper light in the living quarters
+      value: Switch on the upper light in the living quarters
       objectReference: {fileID: 0}
     - target: {fileID: 6201279121459690468, guid: e71587454e05c9546a83731fc3e2117a,
         type: 3}
@@ -1867,7 +1875,7 @@ PrefabInstance:
     - target: {fileID: 9175006874935148551, guid: e71587454e05c9546a83731fc3e2117a,
         type: 3}
       propertyPath: description
-      value: Switch on the light in the maintance room
+      value: Switch on the lower lights in the living quarters
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e71587454e05c9546a83731fc3e2117a, type: 3}
@@ -1998,6 +2006,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7329306865036503688, guid: 2498ad66a5ca7a0418362e618cb9e51a,
+        type: 3}
+      propertyPath: interactions.Array.data[0]
+      value: 
+      objectReference: {fileID: 1095399865}
+    - target: {fileID: 7329306865036503688, guid: 2498ad66a5ca7a0418362e618cb9e51a,
+        type: 3}
+      propertyPath: interactions.Array.data[1]
+      value: 
+      objectReference: {fileID: 2116108864}
+    - target: {fileID: 7329306865036503688, guid: 2498ad66a5ca7a0418362e618cb9e51a,
+        type: 3}
+      propertyPath: interactions.Array.data[2]
+      value: 
+      objectReference: {fileID: 2028611341}
+    - target: {fileID: 7329306865036503688, guid: 2498ad66a5ca7a0418362e618cb9e51a,
+        type: 3}
+      propertyPath: interactions.Array.data[3]
+      value: 
+      objectReference: {fileID: 260774553}
+    - target: {fileID: 7329306865036503688, guid: 2498ad66a5ca7a0418362e618cb9e51a,
+        type: 3}
+      propertyPath: interactions.Array.data[4]
+      value: 
+      objectReference: {fileID: 1183357645}
+    - target: {fileID: 7329306865036503688, guid: 2498ad66a5ca7a0418362e618cb9e51a,
+        type: 3}
+      propertyPath: interactions.Array.data[5]
+      value: 
+      objectReference: {fileID: 2116108864}
+    - target: {fileID: 7329306865036503688, guid: 2498ad66a5ca7a0418362e618cb9e51a,
+        type: 3}
+      propertyPath: interactions.Array.data[6]
+      value: 
+      objectReference: {fileID: 1095399865}
+    - target: {fileID: 7329306865036503688, guid: 2498ad66a5ca7a0418362e618cb9e51a,
+        type: 3}
+      propertyPath: interactions.Array.data[7]
+      value: 
+      objectReference: {fileID: 2028611341}
+    - target: {fileID: 7329306865036503688, guid: 2498ad66a5ca7a0418362e618cb9e51a,
+        type: 3}
+      propertyPath: interactions.Array.data[8]
+      value: 
+      objectReference: {fileID: 260774553}
     - target: {fileID: 7329306865342443659, guid: 2498ad66a5ca7a0418362e618cb9e51a,
         type: 3}
       propertyPath: interactions.Array.data[0]
