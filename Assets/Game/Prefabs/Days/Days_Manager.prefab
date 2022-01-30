@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7329306864675676227}
   - component: {fileID: 7329306864675676224}
   m_Layer: 0
-  m_Name: Days_Container
+  m_Name: Days_Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,6 +59,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7329306864675676227}
     m_Modifications:
+    - target: {fileID: 7791072141911506800, guid: a7331c7071ba5405197c8eff21e724ef,
+        type: 3}
+      propertyPath: interactions.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7791072141911506800, guid: a7331c7071ba5405197c8eff21e724ef,
         type: 3}
       propertyPath: interactions.Array.data[0]
@@ -464,6 +469,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Day (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2133826910665030051, guid: df97f2452a75b4edd9187113bbc91a00,
+        type: 3}
+      propertyPath: interactions.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2133826910665030051, guid: df97f2452a75b4edd9187113bbc91a00,
         type: 3}
