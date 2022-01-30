@@ -1,3 +1,7 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Day;
 using DG.Tweening;
 using TMPro;
@@ -8,10 +12,11 @@ namespace UI
     public class DaytimeView : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI field;
+        [SerializeField] private List<Animator> animators;
         private RectTransform _rect;
-        public bool morningShown;
-        public bool middayShown;
-        public bool eveningShown;
+        private bool morningShown;
+        private bool middayShown;
+        private bool eveningShown;
 
         private void Awake()
         {
@@ -30,18 +35,21 @@ namespace UI
                 daytime = "Morning";
                 if(!morningShown) Animate();
                 morningShown = true;
+                AnimateTrigger("morningShown");
             }
             else if (dayProgress < 0.7f)
             {
                 daytime = "Midday";
                 if(!middayShown) Animate();
                 middayShown = true;
+                AnimateTrigger("middayShown");
             }
             else
             {
                 daytime = "Evening";
                 if(!eveningShown) Animate();
                 eveningShown = true;
+                AnimateTrigger("eveningShown");
             }
 
             field.text = daytime;
@@ -55,6 +63,14 @@ namespace UI
 
             field.text = "Day " + (dayIndex + 1);
             Animate();
+        }
+
+        private void AnimateTrigger( string trigger )
+        {
+            foreach (var animator in animators)
+            {
+                if (animator != null) animator.SetTrigger(trigger);
+            }
         }
 
         private void Animate()
