@@ -9,9 +9,9 @@ namespace UI
     {
         [SerializeField] private TextMeshProUGUI field;
         private RectTransform _rect;
-        private bool morningShown;
-        private bool middayShown;
-        private bool eveningShown;
+        public bool morningShown;
+        public bool middayShown;
+        public bool eveningShown;
 
         private void Awake()
         {
@@ -52,7 +52,7 @@ namespace UI
             morningShown = false;
             middayShown = false;
             eveningShown = false;
-            
+
             field.text = "Day " + (dayIndex + 1);
             Animate();
         }
@@ -60,7 +60,7 @@ namespace UI
         private void Animate()
         {
             _rect.DOKill();
-            
+
             _rect.DOScale(1f, 0.2f).SetEase(Ease.InCubic);
             _rect.DOScale(0f, 0.2f).SetEase(Ease.InCubic).SetDelay(3f);
         }
