@@ -1619,6 +1619,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3824962317756234925, guid: 46a7ce9e6a49acd478a5851a98d0a90e,
         type: 3}
+      propertyPath: _days.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3824962317756234925, guid: 46a7ce9e6a49acd478a5851a98d0a90e,
+        type: 3}
       propertyPath: _days.Array.data[0]
       value: 
       objectReference: {fileID: 1440337333}
@@ -1637,13 +1642,26 @@ PrefabInstance:
       propertyPath: _days.Array.data[3]
       value: 
       objectReference: {fileID: 1193121718}
+    - target: {fileID: 3824962317756234925, guid: 46a7ce9e6a49acd478a5851a98d0a90e,
+        type: 3}
+      propertyPath: _days.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3824962317800434504, guid: 46a7ce9e6a49acd478a5851a98d0a90e,
         type: 3}
       propertyPath: m_text
-      value: "Switch on the light in the weather station \nSwitch on the upper light
-        in the living quarters \nSwitch on the lower lights in the living quarters
-        \nSwitch on the light in the maintance room \nPlease hold for a message from
-        the toaster!"
+      value: 'Switch on the light in the weather station
+
+        Switch on the uper
+        light in the living quarters
+
+        Switch on the lower lights in the living
+        quarters
+
+        Switch on the light in the maintance room
+
+        Please
+        hold for a message from the toaster!'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46a7ce9e6a49acd478a5851a98d0a90e, type: 3}
@@ -1792,21 +1810,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 865578170997086080, guid: e71587454e05c9546a83731fc3e2117a,
-        type: 3}
-      propertyPath: description
-      value: Switch on the light in the maintance room
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690141670286756084, guid: e71587454e05c9546a83731fc3e2117a,
-        type: 3}
-      propertyPath: description
-      value: Switch on the light in the weather station
-      objectReference: {fileID: 0}
-    - target: {fileID: 2489010870734431188, guid: e71587454e05c9546a83731fc3e2117a,
-        type: 3}
-      propertyPath: description
-      value: Switch on the upper light in the living quarters
-      objectReference: {fileID: 0}
     - target: {fileID: 6201279121459690468, guid: e71587454e05c9546a83731fc3e2117a,
         type: 3}
       propertyPath: m_Name
@@ -1867,18 +1870,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7914620621950475031, guid: e71587454e05c9546a83731fc3e2117a,
+    - target: {fileID: 7285714065753081776, guid: e71587454e05c9546a83731fc3e2117a,
         type: 3}
-      propertyPath: description
-      value: Please hold for a message from the toaster!
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175006874935148551, guid: e71587454e05c9546a83731fc3e2117a,
-        type: 3}
-      propertyPath: description
-      value: Switch on the lower lights in the living quarters
+      propertyPath: m_LocalPosition.z
+      value: 18.32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e71587454e05c9546a83731fc3e2117a, type: 3}
+--- !u!114 &6201279120780264407 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4492165897875638321, guid: e71587454e05c9546a83731fc3e2117a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6201279120780264406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bdfd2a102864e0096fd908956290a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6201279120780264408 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8452024949903072056, guid: e71587454e05c9546a83731fc3e2117a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6201279120780264406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bdfd2a102864e0096fd908956290a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6201279120780264409 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 181210683473932942, guid: e71587454e05c9546a83731fc3e2117a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6201279120780264406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bdfd2a102864e0096fd908956290a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6201279120780264410 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4114676241027876650, guid: e71587454e05c9546a83731fc3e2117a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6201279120780264406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bdfd2a102864e0096fd908956290a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7329306863945170238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1886,6 +1932,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3805077898619655464, guid: 2498ad66a5ca7a0418362e618cb9e51a,
+        type: 3}
+      propertyPath: interactions.Array.data[0]
+      value: 
+      objectReference: {fileID: 6201279120780264410}
+    - target: {fileID: 3805077898619655464, guid: 2498ad66a5ca7a0418362e618cb9e51a,
+        type: 3}
+      propertyPath: interactions.Array.data[1]
+      value: 
+      objectReference: {fileID: 6201279120780264409}
+    - target: {fileID: 3805077898619655464, guid: 2498ad66a5ca7a0418362e618cb9e51a,
+        type: 3}
+      propertyPath: interactions.Array.data[2]
+      value: 
+      objectReference: {fileID: 6201279120780264408}
+    - target: {fileID: 3805077898619655464, guid: 2498ad66a5ca7a0418362e618cb9e51a,
+        type: 3}
+      propertyPath: interactions.Array.data[3]
+      value: 
+      objectReference: {fileID: 6201279120780264407}
     - target: {fileID: 7329306863268524123, guid: 2498ad66a5ca7a0418362e618cb9e51a,
         type: 3}
       propertyPath: interactions.Array.size
@@ -1895,7 +1961,7 @@ PrefabInstance:
         type: 3}
       propertyPath: interactions.Array.data[0]
       value: 
-      objectReference: {fileID: 1183357645}
+      objectReference: {fileID: 2028611341}
     - target: {fileID: 7329306863268524123, guid: 2498ad66a5ca7a0418362e618cb9e51a,
         type: 3}
       propertyPath: interactions.Array.data[1]
@@ -2008,6 +2074,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7329306865036503688, guid: 2498ad66a5ca7a0418362e618cb9e51a,
         type: 3}
+      propertyPath: interactions.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329306865036503688, guid: 2498ad66a5ca7a0418362e618cb9e51a,
+        type: 3}
       propertyPath: interactions.Array.data[0]
       value: 
       objectReference: {fileID: 1095399865}
@@ -2030,7 +2101,7 @@ PrefabInstance:
         type: 3}
       propertyPath: interactions.Array.data[4]
       value: 
-      objectReference: {fileID: 1183357645}
+      objectReference: {fileID: 2028611341}
     - target: {fileID: 7329306865036503688, guid: 2498ad66a5ca7a0418362e618cb9e51a,
         type: 3}
       propertyPath: interactions.Array.data[5]
@@ -2045,12 +2116,17 @@ PrefabInstance:
         type: 3}
       propertyPath: interactions.Array.data[7]
       value: 
-      objectReference: {fileID: 2028611341}
+      objectReference: {fileID: 1183357645}
     - target: {fileID: 7329306865036503688, guid: 2498ad66a5ca7a0418362e618cb9e51a,
         type: 3}
       propertyPath: interactions.Array.data[8]
       value: 
-      objectReference: {fileID: 260774553}
+      objectReference: {fileID: 6201279120780264410}
+    - target: {fileID: 7329306865036503688, guid: 2498ad66a5ca7a0418362e618cb9e51a,
+        type: 3}
+      propertyPath: interactions.Array.data[9]
+      value: 
+      objectReference: {fileID: 6201279120780264410}
     - target: {fileID: 7329306865342443659, guid: 2498ad66a5ca7a0418362e618cb9e51a,
         type: 3}
       propertyPath: interactions.Array.data[0]

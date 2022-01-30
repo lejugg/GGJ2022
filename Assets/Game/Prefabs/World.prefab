@@ -61,6 +61,7 @@ Transform:
   m_Children:
   - {fileID: 7184250483632608886}
   - {fileID: 7838908356172895620}
+  - {fileID: 7285714065753081776}
   m_Father: {fileID: 6201279121459690469}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -683,6 +684,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1643194039277075617, guid: 81838bbf02e799543850e15002c9357c,
         type: 3}
+      propertyPath: description
+      value: Switch on the lower lights in the living quarters
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643194039277075617, guid: 81838bbf02e799543850e15002c9357c,
+        type: 3}
       propertyPath: _audioSource
       value: 
       objectReference: {fileID: 6201279122142140209}
@@ -693,14 +699,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5409771287714652018, guid: 81838bbf02e799543850e15002c9357c,
         type: 3}
+      propertyPath: description
+      value: Switch on the upper light in the living quarters
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409771287714652018, guid: 81838bbf02e799543850e15002c9357c,
+        type: 3}
       propertyPath: _audioSource
       value: 
       objectReference: {fileID: 6201279122142140209}
     - target: {fileID: 7321382548833954598, guid: 81838bbf02e799543850e15002c9357c,
         type: 3}
+      propertyPath: description
+      value: Switch on the light in the maintance room
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321382548833954598, guid: 81838bbf02e799543850e15002c9357c,
+        type: 3}
       propertyPath: _audioSource
       value: 
       objectReference: {fileID: 6201279122142140209}
+    - target: {fileID: 9146096732363813970, guid: 81838bbf02e799543850e15002c9357c,
+        type: 3}
+      propertyPath: description
+      value: Switch on the light in the weather station
+      objectReference: {fileID: 0}
     - target: {fileID: 9146096732363813970, guid: 81838bbf02e799543850e15002c9357c,
         type: 3}
       propertyPath: _audioSource
@@ -729,7 +750,7 @@ PrefabInstance:
     - target: {fileID: 437188488168105401, guid: fff3d928d8ddf914490772c22faaeb9c,
         type: 3}
       propertyPath: description
-      value: Toast!
+      value: Please hold for a message from the toaster!
       objectReference: {fileID: 0}
     - target: {fileID: 508397162891471658, guid: fff3d928d8ddf914490772c22faaeb9c,
         type: 3}
@@ -798,4 +819,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 508397162891471658, guid: fff3d928d8ddf914490772c22faaeb9c,
     type: 3}
   m_PrefabInstance: {fileID: 7766269647052127918}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7986115862576456683
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2833646845131061567}
+    m_Modifications:
+    - target: {fileID: 849047586181276763, guid: 4c5b01187d8784fd8ae9d1991e78f2af,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 849047586181276763, guid: 4c5b01187d8784fd8ae9d1991e78f2af,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 849047586181276763, guid: 4c5b01187d8784fd8ae9d1991e78f2af,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 849047586181276763, guid: 4c5b01187d8784fd8ae9d1991e78f2af,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 18.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 849047586181276763, guid: 4c5b01187d8784fd8ae9d1991e78f2af,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 849047586181276763, guid: 4c5b01187d8784fd8ae9d1991e78f2af,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 849047586181276763, guid: 4c5b01187d8784fd8ae9d1991e78f2af,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 849047586181276763, guid: 4c5b01187d8784fd8ae9d1991e78f2af,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 849047586181276763, guid: 4c5b01187d8784fd8ae9d1991e78f2af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 849047586181276763, guid: 4c5b01187d8784fd8ae9d1991e78f2af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 849047586181276763, guid: 4c5b01187d8784fd8ae9d1991e78f2af,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020224323634423235, guid: 4c5b01187d8784fd8ae9d1991e78f2af,
+        type: 3}
+      propertyPath: m_Name
+      value: EndMessage
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4c5b01187d8784fd8ae9d1991e78f2af, type: 3}
+--- !u!4 &7285714065753081776 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 849047586181276763, guid: 4c5b01187d8784fd8ae9d1991e78f2af,
+    type: 3}
+  m_PrefabInstance: {fileID: 7986115862576456683}
   m_PrefabAsset: {fileID: 0}
