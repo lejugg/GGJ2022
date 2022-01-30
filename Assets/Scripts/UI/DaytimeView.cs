@@ -60,6 +60,7 @@ namespace UI
             morningShown = false;
             middayShown = false;
             eveningShown = false;
+            AnimateTrigger("dayEnd");
 
             field.text = "Day " + (dayIndex + 1);
             Animate();
