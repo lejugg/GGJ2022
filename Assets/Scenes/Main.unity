@@ -1814,6 +1814,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 865578170997086080, guid: e71587454e05c9546a83731fc3e2117a,
+        type: 3}
+      propertyPath: description
+      value: Switch on the lower lights in the living quarters
+      objectReference: {fileID: 0}
+    - target: {fileID: 1690141670286756084, guid: e71587454e05c9546a83731fc3e2117a,
+        type: 3}
+      propertyPath: description
+      value: Switch on the light in the weather station
+      objectReference: {fileID: 0}
+    - target: {fileID: 2489010870734431188, guid: e71587454e05c9546a83731fc3e2117a,
+        type: 3}
+      propertyPath: description
+      value: Switch on the uper light in the living quarters
+      objectReference: {fileID: 0}
     - target: {fileID: 6201279121459690468, guid: e71587454e05c9546a83731fc3e2117a,
         type: 3}
       propertyPath: m_Name
@@ -1873,6 +1888,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7914620621950475031, guid: e71587454e05c9546a83731fc3e2117a,
+        type: 3}
+      propertyPath: description
+      value: Please hold for a message from the toaster!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175006874935148551, guid: e71587454e05c9546a83731fc3e2117a,
+        type: 3}
+      propertyPath: description
+      value: Switch on the light in the maintance room
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e71587454e05c9546a83731fc3e2117a, type: 3}
