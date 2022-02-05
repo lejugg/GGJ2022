@@ -1,8 +1,7 @@
-using System;
 using DG.Tweening;
 using UnityEngine;
 
-namespace Interaction
+namespace Interactions
 {
     public class Click : Interaction
     {

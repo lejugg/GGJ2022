@@ -1,7 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-namespace Interaction
+namespace Interactions
 {
     public class DragDrop : Interaction
     {

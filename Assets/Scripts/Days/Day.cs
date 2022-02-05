@@ -1,54 +1,72 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using Interactions;
+using UniRx;
 
-namespace Day
+namespace Days
 {
     public class Day : MonoBehaviour
     {
-        [SerializeField] private List<Interaction.Interaction> interactions;
+        [SerializeField] private List<Interaction> sortedTasks;
+        [SerializeField] private List<Interaction> forbiddenTasks;
+
+        public List<Interaction> Interactions => sortedTasks.Where(interaction => interaction!= null).ToList();
+        public event Action OnDayEnd = delegate {  };
+        public int DayIndex { get; private set; }
+        public ReactiveProperty<Interaction> CurrentInteraction { get; private set; }
+
+        public float DayProgress => 1f - ((_taskQueue.Count + 0.5f) / Interactions.Count); 
         
-        
-        public List<Interaction.Interaction> Interactions => interactions.Where(interaction => interaction!= null).ToList();
-        public event Action OnDayComplete = delegate {  };
-        public event Action<float> OnInteractionComplete = delegate {  };
-        
-        private Queue<Interaction.Interaction> _taskQueue = new Queue<Interaction.Interaction>();
-        private Interaction.Interaction _currentInteraction;
-        
-        public void Initialize()
+        private Queue<Interaction> _taskQueue = new Queue<Interaction>();
+
+        public void StartDay(int dayIndex)
         {
+            DayIndex = dayIndex;
+            
             foreach (var interaction in Interactions)
             {
                 _taskQueue.Enqueue(interaction);
             }
-            
-            NextDayAndSubscribe();
-        }
 
-        private void InteractionCompleted(Interaction.Interaction interaction)
+            foreach (var forbiddenTask in forbiddenTasks)
+            {
+                forbiddenTask.SetIsForbidden(true);
+            }
+            
+            SubscribeToNextTask();
+        }
+        
+        private void SubscribeToNextTask()
+        {
+            if (CurrentInteraction == null)
+            {
+                CurrentInteraction = new ReactiveProperty<Interaction>();
+            }
+            
+            CurrentInteraction.Value = _taskQueue.Dequeue();
+            CurrentInteraction.Value.SetIsCurrentTask(true);
+            CurrentInteraction.Value.OnComplete += InteractionCompleted;
+            
+            Debug.Log($"Next: {CurrentInteraction.Value.Description}");
+        }
+        
+        private void InteractionCompleted(Interaction interaction)
         {
             interaction.OnComplete -= InteractionCompleted;
-
+            CurrentInteraction.Value.SetIsCurrentTask(false);
+            
             if (_taskQueue.Count == 0)
             {
-                OnDayComplete();
+                OnDayEnd();
                 return;
             }
-
-            OnInteractionComplete(1f - ((_taskQueue.Count + 0.5f) / Interactions.Count));
-            NextDayAndSubscribe();
-        }
-
-        private void NextDayAndSubscribe()
-        {
-            _currentInteraction = _taskQueue.Dequeue();
-            _currentInteraction.SetCurrent();
-            _currentInteraction.OnComplete += InteractionCompleted;
             
-            Debug.Log($"Do {_currentInteraction.Description}");
+            SubscribeToNextTask();
         }
+
 
     }
 }

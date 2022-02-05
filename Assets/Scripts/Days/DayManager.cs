@@ -1,40 +1,39 @@
-using System;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 
-namespace Day
+namespace Days
 {
     public class DayManager : MonoBehaviour
     {
         [SerializeField] private List<Day> _days;
         
-        public Day CurrentDay => _days[_currentDayIndex];
-        public static event Action<int> OnDayComplete = delegate {  }; 
-        public static event Action<int> OnStartNewDay = delegate {  }; 
-        public static event Action<float> OnCurrentDayInteraction = delegate {  }; 
-        
+        public static DayManager Instance { get; private set; }
+
+        public ReactiveProperty<Day> CurrentDay { get; private set; }
+
         private int _currentDayIndex = 0;
         
         private void Awake()
         {
-            InitializeAndSubscribeToDay();
+            Instance = this;
+            CurrentDay = new ReactiveProperty<Day>();
+            InitializeAndSubscribeToDays();
         }
 
-        private void InitializeAndSubscribeToDay()
+        private void InitializeAndSubscribeToDays()
         {
-            Debug.Log($"Today it's: {CurrentDay.gameObject.name}");
-            OnStartNewDay(_currentDayIndex);
-            CurrentDay.Initialize();
-            CurrentDay.OnDayComplete += HandleCurrentDayComplete;
-            CurrentDay.OnInteractionComplete += HandleInteractionComplete;
-        }
-
-        private void HandleCurrentDayComplete()
-        {
-            OnDayComplete(_currentDayIndex);
+            var currentDay = _days[_currentDayIndex];
+            Debug.Log($"Today is: {currentDay.gameObject.name}");
             
-            CurrentDay.OnDayComplete -= HandleCurrentDayComplete;
-            CurrentDay.OnInteractionComplete -= HandleInteractionComplete;
+            currentDay.OnDayEnd += HandleCurrentDayEnd;
+            currentDay.StartDay(_currentDayIndex);
+            CurrentDay.Value = currentDay;
+        }
+
+        private void HandleCurrentDayEnd()
+        {
+            CurrentDay.Value.OnDayEnd -= HandleCurrentDayEnd;
 
             _currentDayIndex++;
 
@@ -44,14 +43,7 @@ namespace Day
                 return;
             }
             
-            InitializeAndSubscribeToDay();
+            InitializeAndSubscribeToDays();
         }
-        
-        
-        private void HandleInteractionComplete(float dayProgress)
-        {
-            OnCurrentDayInteraction(dayProgress);
-        }
-
     }
 }

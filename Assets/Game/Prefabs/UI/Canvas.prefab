@@ -145,7 +145,7 @@ PrefabInstance:
     - target: {fileID: 4354743324821493972, guid: 7ef947b4ad4fa45aea53606a82c11e4a,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4354743324821493972, guid: 7ef947b4ad4fa45aea53606a82c11e4a,
         type: 3}
@@ -170,12 +170,12 @@ PrefabInstance:
     - target: {fileID: 4354743324821493972, guid: 7ef947b4ad4fa45aea53606a82c11e4a,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4354743324821493972, guid: 7ef947b4ad4fa45aea53606a82c11e4a,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4354743324821493972, guid: 7ef947b4ad4fa45aea53606a82c11e4a,
         type: 3}
@@ -246,6 +246,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TodoView
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354743324821493977, guid: 7ef947b4ad4fa45aea53606a82c11e4a,
+        type: 3}
+      propertyPath: listTextElement
+      value: 
+      objectReference: {fileID: 1404498110965840753, guid: ff2db89c6c4fc40dbbbef2b0644cb78a,
+        type: 3}
+    - target: {fileID: 4354743325223702758, guid: 7ef947b4ad4fa45aea53606a82c11e4a,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354743325223702758, guid: 7ef947b4ad4fa45aea53606a82c11e4a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354743325223702758, guid: 7ef947b4ad4fa45aea53606a82c11e4a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468178861976105343, guid: 7ef947b4ad4fa45aea53606a82c11e4a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6999379676989317835, guid: 7ef947b4ad4fa45aea53606a82c11e4a,
+        type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ef947b4ad4fa45aea53606a82c11e4a, type: 3}

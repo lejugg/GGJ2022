@@ -1,10 +1,9 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Day;
+using Days;
 using DG.Tweening;
+using Interactions;
 using TMPro;
+using UniRx;
 using UnityEngine;
 
 namespace UI
@@ -20,16 +19,17 @@ namespace UI
 
         private void Awake()
         {
-            DayManager.OnStartNewDay += HandleOnStartNewDay;
-            DayManager.OnCurrentDayInteraction += HandleInteraction;
+            DayManager.Instance.CurrentDay.Subscribe(OnDayChanged);
+            DayManager.Instance.CurrentDay.Value.CurrentInteraction.Subscribe(HandleInteraction);
             _rect = GetComponent<RectTransform>();
             _rect.localScale = Vector3.zero;
         }
-
-        private void HandleInteraction(float dayProgress)
+        
+        private void HandleInteraction(Interaction interaction)
         {
             var daytime = "";
-
+            var dayProgress = DayManager.Instance.CurrentDay.Value.DayProgress;
+            
             if (dayProgress < 0.3f)
             {
                 daytime = "Morning";
@@ -51,21 +51,21 @@ namespace UI
                 eveningShown = true;
                 AnimateTrigger("eveningShown");
             }
-
+        
             field.text = daytime;
         }
-
-        private void HandleOnStartNewDay(int dayIndex)
+        
+        private void OnDayChanged(Day day)
         {
             morningShown = false;
             middayShown = false;
             eveningShown = false;
             AnimateTrigger("dayEnd");
-
-            field.text = "Day " + (dayIndex + 1);
+        
+            field.text = "Day " + (day.DayIndex + 1);
             Animate();
         }
-
+        
         private void AnimateTrigger( string trigger )
         {
             foreach (var animator in animators)
@@ -73,11 +73,11 @@ namespace UI
                 if (animator != null) animator.SetTrigger(trigger);
             }
         }
-
+        
         private void Animate()
         {
             _rect.DOKill();
-
+        
             _rect.DOScale(1f, 0.2f).SetEase(Ease.InCubic);
             _rect.DOScale(0f, 0.2f).SetEase(Ease.InCubic).SetDelay(3f);
         }

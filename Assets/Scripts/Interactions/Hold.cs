@@ -2,7 +2,7 @@ using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
-namespace Interaction
+namespace Interactions
 {
     public class Hold : Interaction
     {

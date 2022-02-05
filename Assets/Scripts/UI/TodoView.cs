@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
-using Day;
+using System.Runtime.CompilerServices;
+using Days;
 using DG.Tweening;
+using Interactions;
 using TMPro;
+using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,53 +13,67 @@ namespace UI
 {
     public class TodoView : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI listText;
+        [SerializeField] private TodoListElement listTextElement;
+        [SerializeField] private RectTransform textParent;
         [SerializeField] private Button close;
-        [SerializeField] private List<Day.Day> _days;
 
-        private bool toggle = false;
+        private bool toggle;
         private RectTransform _rect;
-        private int _currentDayIndex;
+        private Day _currentDay;
+        private List<TodoListElement> _textLines = new List<TodoListElement>();
+        private CompositeDisposable _disposable = new CompositeDisposable();
 
         private void Awake()
         {
-            DayManager.OnStartNewDay += HandleStartNewDay;
+            DayManager.Instance.CurrentDay.Subscribe(HandleDayStart);
             _rect = GetComponent<RectTransform>();
             close.onClick.AddListener( HandleClose);
-        }
-
-        private void Start()
-        {
-            
-            DayManager.OnCurrentDayInteraction += HandleNewInteraction;
-        }
-
-        private void HandleNewInteraction(float dayProgress)
-        {
-            HandleStartNewDay(_currentDayIndex);
         }
 
         private void HandleClose()
         {
             toggle = !toggle;
 
-            _rect.DOAnchorPosY(toggle ? 600f : 0f, 0.5f).SetEase(Ease.OutBack);
+            var height = textParent.rect.height - 100f;
+            _rect.DOAnchorPosY(toggle ? (height) : 0f, 0.5f).SetEase(Ease.OutBack);
         }
-
-        private void HandleStartNewDay(int index)
+        
+        private void HandleDayStart(Day day)
         {
-            _currentDayIndex = index;
+            _disposable.Clear();
             
-            var tasks = "";
-            var interactions = _days[index].Interactions;
+            _currentDay = day;
+            var interactions = day.Interactions;
+
+            foreach (var textLine in _textLines)
+            {
+                Destroy(textLine.gameObject);
+            }
+            _textLines.Clear();
             
             foreach (var interaction in interactions)
             {
-                tasks += interaction.WasCompletedToday ? "DONE: " : "";
-                tasks += interaction.Description + "\n";
+                var textLine = Instantiate(listTextElement, textParent);
+                _textLines.Add(textLine);
             }
 
-            listText.text = tasks;
+            _currentDay.CurrentInteraction.Subscribe(OnNewInteraction).AddTo(_disposable);
+        }
+
+        private void OnNewInteraction(Interaction interaction)
+        {
+            interaction.WasCompletedToday.Subscribe(_ => UpdateTextLines());
+        }
+
+        private void UpdateTextLines()
+        {
+            for (var index = 0; index < _textLines.Count; index++)
+            {
+                var textLine = _textLines[index];
+                var interaction = _currentDay.Interactions[index];
+                textLine.Text.text = interaction.Description;
+                textLine.Text.fontStyle = interaction.WasCompletedToday.Value ? FontStyles.Strikethrough : FontStyles.Normal;
+            }
         }
     }
 }
